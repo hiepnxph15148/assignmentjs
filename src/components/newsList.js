@@ -1,7 +1,8 @@
-import data from "../data";
+
 const NewsList = {
-    print() {
-        return /*html*/`
+        async print(){const response = await fetch("http://localhost:3001/post");
+        const data = await response.json();
+        return`
         <h2 class="text-2xl font-semibold uppercase my-4">Tin tức học tập</h2>
         <div class="grid grid-cols-3 gap-8 m-auto">
             ${data.map((post) => /* html */ `
@@ -19,7 +20,7 @@ const NewsList = {
             `).join("")}
           
           </div>
-        `
-    }
+        `;
+    },
 };
 export default NewsList;

@@ -4,7 +4,7 @@ import MenuList from "../components/menuList";
 import NewsList from "../components/newsList";
 
 const HomePage = {
-    print() {
+   async print() {
         return `
             <div>
             ${MenuList.print()}
@@ -13,7 +13,7 @@ const HomePage = {
             ${Banner.print()}
             </div>
             <div>
-            ${NewsList.print()}
+            ${await NewsList.print()}
             </div>
             <div>
             ${Footer.print()}
