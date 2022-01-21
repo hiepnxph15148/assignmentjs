@@ -1,7 +1,8 @@
 import Footer from "../components/footer";
 
+
 const Dashboard = {
-    print() {
+    render() {
         return /* html */`  
         <div class="min-h-full">
   <nav class="bg-gray-800">

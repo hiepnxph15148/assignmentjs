@@ -1,7 +1,7 @@
-
+import axios from 'axios';
 const NewsList = {
-        async print(){const response = await fetch("http://localhost:3001/post");
-        const data = await response.json();
+        async render() {
+        const { data } = await axios.get('https://5e79b4b817314d00161333da.mockapi.io/posts');
         return`
         <h2 class="text-2xl font-semibold uppercase my-4">Tin tức học tập</h2>
         <div class="grid grid-cols-3 gap-8 m-auto">

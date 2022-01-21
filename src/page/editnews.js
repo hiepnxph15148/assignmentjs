@@ -1,7 +1,7 @@
 import data from "../data"
 
 const EditNews = {
-    print(id) {
+    render(id) {
         const reuslt = data.find((post) => post.id === id);
         return /* html */`
         <div class="w-24 h-10 border-2 text-center py-1 my-10 ml-20"><a href="/admin/news">Trở Về</a></div>

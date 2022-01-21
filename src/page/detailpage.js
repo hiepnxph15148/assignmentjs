@@ -1,10 +1,8 @@
-import Footer from "../components/footer";
-import MenuList from "../components/menuList";
-import data from "../data";
-
+import axios from 'axios';
+import { get } from '../api/post';
 const DetailNewsPage = {
-    print(id) {
-        const result = data.find((post) => post.id === id);
+     async render(id) {
+           const { data } = await get(id);
         return `
         <div class="max-w-5xl m-auto">
             ${MenuList.print()}

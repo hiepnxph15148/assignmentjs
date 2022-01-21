@@ -4,17 +4,18 @@ import AddNews from "./page/addnews";
 import AdminNews from "./page/adminew";
 import Dashboard from "./page/dashboard";
 import DetailNewsPage from "./page/detailpage";
-import EditNews from "./page/editnews";
 import HomePage from "./page/home";
 import NewsPage from "./page/news";
 import SignIn from "./page/signin";
 import SignUp from "./page/signup";
+import AdminEditPost from "./page/edit";
 
 const router = new Navigo("/", {linksSelector: "a"});
 // const render = (content) => {
 const print = async(content,id)=>{
     // document.getElementById("header").innerHTML = MenuList.print();
-    document.getElementById("app").innerHTML = await content.print(id);
+    document.getElementById("app").innerHTML = await content.render(id);
+    if(content.afterRender) content.afterRender(id);
 }
 router.on({
     "/": () => {
@@ -42,9 +43,8 @@ router.on({
     "/admin/news/add": () => {
         print(AddNews)
     },
-    "/admin/news/:id/edit": ({ data }) => {
-        const { id } = data;
-        render(EditNews.print(id));
+    "/admin/news/:id/edit": ({data}) => {
+        print(AdminEditPost, data.id);
     },
 });
 router.resolve();

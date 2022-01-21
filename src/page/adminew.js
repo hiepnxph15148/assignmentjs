@@ -1,8 +1,7 @@
-import Footer from "../components/footer"
-import data from "../data";
-
+import { getAll,remove } from "../api/post";
 const AdminNews = {
-    print() {
+  async render() {
+    const { data } = await getAll()
         return /* html */`
         <div class="min-h-full">
         <nav class="bg-gray-800">
@@ -183,7 +182,7 @@ const AdminNews = {
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                           <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
-                          <buttom class="inline-block bg-indigo-500 text-white text-sm py-2 px-2  ">Xóa</buttom>
+                          <button data-id="${post.id}" class="btn btn-remove inline-block bg-indigo-500 text-white text-sm py-2 px-2">Xóa</button>
                         </td>
                       </tr>
           
@@ -194,10 +193,7 @@ const AdminNews = {
                   </div>
                 </div>
               </div>
-            </div>
-                    ${Footer.print()}
 
-              </div>
             </div>
             <!-- /End replace -->
           </div>
@@ -213,6 +209,22 @@ const AdminNews = {
 
         
         `
-    }
+    },
+    afterRender(){
+      // lấy toàn bộ button thông qua class
+      const buttons = document.querySelectorAll('.btn');
+      // lấy từng button
+      buttons.forEach(button => {
+          button.addEventListener('click', () => {
+              // lấy ID thông qua thuộc tính data-id ở button
+              const id = button.dataset.id;
+              const confirm = window.confirm("May co chac chan muon xoa khong???");
+              if(confirm){
+                  // call api
+                  remove(id).then(() => console.log("Da xoa thanh cong"))
+              }
+          })
+      });
+  }
 };
 export default AdminNews;

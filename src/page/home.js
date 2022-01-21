@@ -4,19 +4,19 @@ import MenuList from "../components/menuList";
 import NewsList from "../components/newsList";
 
 const HomePage = {
-   async print() {
+   async render() {
         return `
             <div>
-            ${MenuList.print()}
+            ${MenuList.render()}
             </div>
             <div>
-            ${Banner.print()}
+            ${Banner.render()}
             </div>
             <div>
-            ${await NewsList.print()}
+            ${await NewsList.render()}
             </div>
             <div>
-            ${Footer.print()}
+            ${Footer.render()}
         </div>    
         `
     },

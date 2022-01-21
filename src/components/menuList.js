@@ -1,5 +1,5 @@
 const MenuList = {
-    print() {
+    render() {
         return /*html*/`
         <div class="bg-[#191f37] py-4">
         <a href="">
