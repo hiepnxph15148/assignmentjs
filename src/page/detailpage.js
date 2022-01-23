@@ -11,8 +11,8 @@ const DetailPost = {
             <div class="max-w-5xl m-auto">
             ${MenuList.render()}
             <h1 class="text-center py-2 font-bold">${data.title}</h1>
-            <img src="${data.img}" class="m-auto />
-            <p text-center py-4>${data.desc}</p>
+            <img src="${data.img}" class="m-auto py-4 />
+            <p class"text-center">${data.desc}</p>
            <spam class="backdrop-grayscale-400"> ${Footer.render()} </spam>
         </div>    
             </div>
