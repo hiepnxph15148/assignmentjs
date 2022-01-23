@@ -19,6 +19,10 @@
         {
             "src": "/news",
             "dest": "/"
+        },
+        {
+            "src":"/admin",
+            "dest": "/"
         }
     ]
 }
