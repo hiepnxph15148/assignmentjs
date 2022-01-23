@@ -10,7 +10,7 @@ import SignIn from "./page/signin";
 import SignUp from "./page/signup";
 import AdminEditPost from "./page/edit";
 
-const router = new Navigo("/", {linksSelector: "a"});
+const router = new Navigo("/", {linksSelector: "a",hash});
 // const render = (content) => {
 const print = async(content,id)=>{
     // document.getElementById("header").innerHTML = MenuList.print();
