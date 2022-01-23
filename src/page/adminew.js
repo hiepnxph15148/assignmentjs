@@ -218,10 +218,10 @@ const AdminNews = {
           button.addEventListener('click', () => {
               // lấy ID thông qua thuộc tính data-id ở button
               const id = button.dataset.id;
-              const confirm = window.confirm("May co chac chan muon xoa khong???");
+              const confirm = window.confirm("Bạn có muốn xóa không???");
               if(confirm){
                   // call api
-                  remove(id).then(() => console.log("Da xoa thanh cong"))
+                  remove(id).then(() => console.log("Đã xóa thành công"))
               }
           })
       });
