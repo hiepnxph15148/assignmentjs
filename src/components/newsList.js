@@ -7,9 +7,9 @@ const NewsList = {
             ${data.map((post) => /* html */ `
                 <div class="news">
                     <div class="iteam border border-black p-2">
-                        <a href="/news/${post.id}"><img src="${post.img}" class="mx-auto" alt=""></a>
+                        <a href="/#/news/${post.id}"><img src="${post.img}" class="mx-auto" alt=""></a>
                 <h2  class="text-center">
-                    <a href="/news/${post.id}">${post.title}</a>
+                    <a href="/#/news/${post.id}">${post.title}</a>
                 </h2>
                 <p class="text-center">
                     ${post.desc}
