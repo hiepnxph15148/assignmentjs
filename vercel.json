@@ -33,7 +33,7 @@
             "dest":"/"
         },
         {
-            "src":"/admin/news/id/edit",
+            "src":"/admin/news/id:/edit",
             "dest":"/"
         }
     ]
