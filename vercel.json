@@ -17,19 +17,7 @@
             "dest": "/"
         },
         {
-            "src": "/news/:id",
-            "dest": "/"
-        },
-        {
-            "src": "/admin/news",
-            "dest": "/"
-        },
-        {
-            "src": "/admin/news/add",
-            "dest": "/"
-        },
-        {
-            "src": "/admin/news/:id/edit",
+            "src": "/news",
             "dest": "/"
         }
     ]
