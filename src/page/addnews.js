@@ -54,37 +54,38 @@ const AddNews = {
         </main>
         `
     },
-    afterRender(){
-        const formAdd = document.querySelector('#form-add');
-        const imgPost = document.querySelector("#img-post");
+afterRender() {
+    const formAdd = document.querySelector("#form-add");
+    const imgPost = document.querySelector("#img-post");
 
-        imgPost.addEventListener("change", (e) =>{
-            const file = e.target.files[0];
-            console.log(file);
-        // lay gia tri cua file upload cho su dung formData
-            const formData = new FormData();
-            formData.append("file",file);
-            formData.append("upload_preset","lmpuk8lt");
-        //call API
-        axios({
-            url:"https://api.cloudinary.com/v1_1/fptpolytechnic/image/upload",
-            method:"POST",
-            headers:{
-                "content-Type": "application/x-www-formendcoded",
-            },
-            data: formData,
+    imgPost.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/fptpolytechnic/image/upload";
+
+      // Lấy giá trị của file upload cho sử dụng formData
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "lmpuk8lt");
+      
+        // call API
+      const { data } = await axios.post(CLOUDINARY_API,formData, {
+          headers: {
+            "Content-Type": "application/x-www-formendcoded",
+          },
+        }
+      );
+      // submit form
+      formAdd.addEventListener("submit", (e) => {
+        e.preventDefault();
+        add({
+          title: document.querySelector("#title-post").value,
+          img: data.url,
+          desc: document.querySelector("#desc-post").value,
         });
-    });
+        // Sau khi thêm bài viết thành công...
+      });
 
-        formAdd.addEventListener('submit', (e) => {
-            e.preventDefault();
-            add({
-                "title": document.querySelector('#title-post').value,
-                "img":  document.querySelector('#img-post').value,
-                "desc":  document.querySelector('#desc-post').value
-            })
-            // axios.post('https://5e79b4b817314d00161333da.mockapi.io/posts', postFake)
-        })
-    }
+    });
+  },
 };
 export default AddNews;

@@ -33,7 +33,7 @@ router.on({
     "/signup": () => {
         print(SignUp)
     },
-    "/news/:id": (data) => print(DetailNewsPage, data.data.id),
+    "/news/:id": (data) => print(DetailNewsPage,data.id),
     "/admin/dashboard": () => {
         print(Dashboard)
     },
