@@ -1,7 +1,7 @@
 import axios from 'axios';
 const NewsList = {
         async render() {
-        const { data } = await axios.get('https://5e79b4b817314d00161333da.mockapi.io/posts');
+        const { data } = await axios.get('http://localhost:3001/posts');
         return`
         <div class="grid grid-cols-3 gap-8 m-auto py-4">
             ${data.map((post) => /* html */ `
