@@ -1,3 +1,4 @@
+import axios, { Axios } from "axios";
 import { add } from "../api/post";
 
 const AddNews = {
@@ -35,7 +36,7 @@ const AddNews = {
                 placeholder="title post"
                 id="title-post"
                 > <br />
-            <input type="text" 
+            <input type="file" 
                 class="border-2 border-slate-900 w-96 h-10 mb-8" 
                 placeholder="image "
                 id="img-post"
@@ -55,6 +56,26 @@ const AddNews = {
     },
     afterRender(){
         const formAdd = document.querySelector('#form-add');
+        const imgPost = document.querySelector("#img-post");
+
+        imgPost.addEventListener("change", (e) =>{
+            const file = e.target.files[0];
+            console.log(file);
+        // lay gia tri cua file upload cho su dung formData
+            const formData = new FormData();
+            formData.append("file",file);
+            formData.append("upload_preset","lmpuk8lt");
+        //call API
+        axios({
+            url:"https://api.cloudinary.com/v1_1/fptpolytechnic/image/upload",
+            method:"POST",
+            headers:{
+                "content-Type": "application/x-www-formendcoded",
+            },
+            data: formData,
+        });
+    });
+
         formAdd.addEventListener('submit', (e) => {
             e.preventDefault();
             add({
