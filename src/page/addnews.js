@@ -1,6 +1,7 @@
 import axios, { Axios } from "axios";
 import { add } from "../api/post";
-
+// import { reRender } from "../utils/rerender";
+// import AdminNews from "./adminew";
 const AddNews = {
     render() {
         return/*html*/`
@@ -83,8 +84,9 @@ afterRender() {
           desc: document.querySelector("#desc-post").value,
         });
         // Sau khi thêm bài viết thành công...
+        document.location.href="/#/admin/news/";
+        // await reRender(AdminNews, "#app")
       });
-
     });
   },
 };

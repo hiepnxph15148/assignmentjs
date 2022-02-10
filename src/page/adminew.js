@@ -1,4 +1,5 @@
 import { getAll,remove } from "../api/post";
+// import { reRender } from "../utils/rerender";
 const AdminNews = {
   async render() {
     const { data } = await getAll()

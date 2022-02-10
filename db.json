@@ -1,30 +1,6 @@
 {
   "posts": [
     {
-      "title": "new post",
-      "img": "anh moi them",
-      "desc": "dfafaf",
-      "id": 1
-    },
-    {
-      "title": "new post 2",
-      "img": "anh moi them 2",
-      "desc": "dfafaf 2",
-      "id": 2
-    },
-    {
-      "title": "new post 1",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1644222765/atufa0wijsaliuwykjnn.png",
-      "desc": "dsadsadas",
-      "id": 3
-    },
-    {
-      "title": "",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1644223001/gmy2xihg8axmsllxwclj.png",
-      "desc": "",
-      "id": 4
-    },
-    {
       "title": "Hi chào cậu",
       "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
       "desc": "ádas",
@@ -67,9 +43,9 @@
       "id": 11
     },
     {
-      "title": "Hi chào cậu",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
-      "desc": "ádas",
+      "title": "Hiệp nè",
+      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644301464/wayimzwbcynwql90dpo7.jpg",
+      "desc": "hi",
       "id": 12
     }
   ],
@@ -85,6 +61,21 @@
       "password": "$2a$10$dQTjGYR2yJXGqpWPfgnaNOBW0Ak0QxK1VX2IXVxRxUeA50oCu7W42",
       "username": "datlt23061",
       "id": 2
+    },
+    {
+      "email": "hiepnxph@gmail.com",
+      "password": "$2a$10$fj3avUYxnVAJSTkDwVBf.O/wycUX6ueehzRvDj0SghNmzI1FWIA0K",
+      "id": 3
+    },
+    {
+      "email": "hiepnxph15148@fpt.edu.vn",
+      "password": "$2a$10$nnoVsGUn06Fmge4CdBN5xuzGWNVF3w.ngcJ9fF9dIh.cwQghf9QZ.",
+      "id": 4
+    },
+    {
+      "email": "ngankien1111@gmail.com",
+      "password": "$2a$10$pWVbmSdmuzNIqzK/ih74MOLIHwoSVqgbBgSXNy/FBNhKn.uucA6lu",
+      "id": 5
     }
   ]
 }
