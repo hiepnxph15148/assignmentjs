@@ -30,22 +30,22 @@ const AddNews = {
         </div>
         </header>
         <!-- Replace with your content -->
-        <main class="border-8 border-sky-500 mt-8 rounded-3xl p-8">
+        <main  class="border-8 border-sky-500 mt-8 rounded-3xl p-8 hi">
         <form action="" id="form-add">
             <input type="text" 
                 class="border-2 border-slate-900 w-96 h-10 mb-8" 
-                placeholder="title post"
+                placeholder="Tên sản phẩm"
                 id="title-post"
                 > <br />
             <input type="file" 
-                class="border-2 border-slate-900 w-96 h-10 mb-8" 
+                class="border-2 border-slate-900 mb-8" 
                 placeholder="image "
                 id="img-post"
                 > <br />
             <textarea name="" 
                     id="desc-post" 
                     class=" border-2 border-slate-900 w-96 h-10 mb-8"
-                    placeholder="Bài viết"
+                    placeholder="Giá sản phẩm"
                     ></textarea><br />
             <button class="bg-blue-500 p-4 text-white rounded-3xl">Thêm bài viết</button>
         </form>

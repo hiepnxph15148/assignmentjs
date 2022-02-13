@@ -1,13 +1,8 @@
 import axios from 'axios';
-import Footer from '../components/footer';
-import MenuList from '../components/menuList';
-import Banner from '../components/banner';
-const AboutPage = {
+const NewsList2 = {
         async render() {
         const { data } = await axios.get('http://localhost:3001/posts');
         return`
-        <div> ${MenuList.render()}</div>
-        <div> ${Banner.render()}</div>
         <h1 class="text-center font-bold py-3">Đồ uống đặc chưng </h1>
         <div class="grid grid-cols-5 gap-4 m-auto py-8">
             ${data.map((post) => /* html */ `
@@ -24,11 +19,10 @@ const AboutPage = {
             </div>
             `).join("")}
             </div>
-            </div>
-            <a href=""><img src="https://res.cloudinary.com/fptpolytechnic/image/upload/v1644757361/banner2_j8syqq.jpg" class="py-4" alt=""></a>
             <div>
-            <spam class=""> ${Footer.render()} </spam>
+            <a href=""><img src="https://res.cloudinary.com/fptpolytechnic/image/upload/v1644763699/banner1_jk3duz.jpg" class="py-4" alt=""></a>
+            </div>
         `;
     },
 };
-export default AboutPage;
+export default NewsList2;

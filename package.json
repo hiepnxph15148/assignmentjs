@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "axios": "^0.25.0",
-    "navigo": "^8.11.1"
+    "navigo": "^8.11.1",
+    "sweetalert": "^2.1.2",
+    "toastr": "^2.1.4"
   }
 }

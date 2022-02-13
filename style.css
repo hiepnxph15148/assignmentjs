@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.hi{
+    background-image: url(https://res.cloudinary.com/fptpolytechnic/image/upload/v1644757361/banner4_qin6v9.jpg);
+}

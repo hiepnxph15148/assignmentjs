@@ -1,4 +1,7 @@
 import {signin} from "../api/user"
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+
 const SignIn = {
     render() {
         return/* html */ `
@@ -27,14 +30,34 @@ const SignIn = {
         `;
 },
 afterRender(){
-    const formSignin = document.querySelector('#formSignin');
-    formSignin.addEventListener('submit', function(e){
-        e.preventDefault();
-        signin({
-            email: document.querySelector('#email').value,
-            password: document.querySelector('#password').value
-        })
-    })
-},
-};
+  const formSignin = document.querySelector('#formSignin');
+  formSignin.addEventListener('submit', async function(e){
+      e.preventDefault();
+      try {
+          const { data } = await signin({
+              email: document.querySelector('#email').value,
+              password: document.querySelector('#password').value
+          });    
+          console.log(data);
+          if(data){
+              localStorage.setItem('user', JSON.stringify(data.user));
+              toastr.success("Đăng nhập thành công");
+              setTimeout(()=>{
+                  if(data.user.id === 1){
+                    document.location.href="/admin/news";
+                  } else {
+                    document.location.href="/"
+                  }
+              }, 2000);
+          }
+          
+      } catch (error) {
+          toastr.error(error.response.data);
+      }
+      
+
+      
+  })
+}
+}
 export default SignIn;

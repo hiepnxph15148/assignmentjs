@@ -1,27 +1,35 @@
 const MenuList = {
     render() {
         return /*html*/`
-        <div class="bg-[#191f37] py-4">
-        <a href="">
-          <img src="https://picsum.photos/250/100" class="mx-auto" alt="">
-        </a>
-      </div>
-    <div class="bg-[#ca7802]">
-        <ul class="flex">
+    <div class="bg-white">
+        <ul class="flex justify-between px-8">
+        <li><a href="/"><img src="https://res.cloudinary.com/fptpolytechnic/image/upload/v1644757348/logo-dark_ksvqsf.png" class="block px-4 py w-[200px]" alt=""></a></li>
         <li><a href="/" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Trang chủ </a></li>
-        <li><a href="/about" class="block px-4 py-3 hover:bg-[red] hover:text-white">Chương trình đào tạo</a></li>
-        <li><a href="/admin/dashboard"  class="block px-4 py-3 hover:bg-[red] hover:text-white ">Dashboard</a></li>
-        <li><a href="/news" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Tin tức</a></li>
+        <li><a href="/about" class="block px-4 py-3 hover:bg-[red] hover:text-white">Đang bán</a></li>
+        <li><a href="/news" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đặc chưng</a></li>
         <li><a href="/signin" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đăng nhập</a></li>
         <li><a href="/signup" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đăng ký</a></li>
+        ${localStorage.getItem('user') ? `
+        <li class="block px-4 py-3 hover:bg-[red] hover:text-white" id="account-email"></li>
+        <li class="block px-4 py-3 hover:bg-[red]" id="logout" class="cursor-pointer">Logout</li>
         
-            <form action="" class="ml-[70px] mt-[10px]">
-            <input type="text">
-            <button class="border bg-blue-800 ... px-[10px] text-white ... border-none hover:bg-sky-500 ">Tìm kiếm</button>
-            </form>
-        </ul>
+      </ul>`: "" }
     </div>
         `
-    }
-}
+    },
+    afteRender(){
+        const accountEmail = document.querySelector('#account-email');
+        if(accountEmail){
+          accountEmail.innerHTML = JSON.parse(localStorage.getItem('user')).email;  
+        }
+        const logout = document.querySelector('#logout');
+        if(logout){
+          logout.addEventListener('click', function(){
+            localStorage.removeItem('user');
+            reRender(MenuList, '#menulist');
+        })
+        }
+        
+      }
+};
 export default MenuList;

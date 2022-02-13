@@ -17,6 +17,25 @@ const print = async(content,id)=>{
     document.getElementById("app").innerHTML = await content.render(id);
     if(content.afterRender) content.afterRender(id);
 }
+router.on("/admin/*", () =>{}, {
+    // Phương thức before được gọi trước khi render nội dung ra trình duyệt
+    before: (done) => {
+        if(localStorage.getItem('user')){
+            // lấy id trong localStorage
+            const userId = JSON.parse(localStorage.getItem('user')).id;
+            // Nếu userid == 1 thì render
+            if(userId === 1){
+                done();
+            } else {
+                // ngược lại nếu ko phải admin quay về trang chủ
+                document.location.href="/"
+            }
+        } else {
+            document.location.href="/"
+        }
+        
+    }
+})
 router.on({
     "/": () => {
         print(HomePage);

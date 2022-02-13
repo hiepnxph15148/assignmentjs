@@ -1,81 +1,78 @@
 {
   "posts": [
     {
-      "title": "Hi chào cậu",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
-      "desc": "ádas",
-      "id": 5
-    },
-    {
-      "title": "Hi chào cậu",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
-      "desc": "ádas",
-      "id": 6
-    },
-    {
-      "title": "Hi chào cậu",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
-      "desc": "ádas",
-      "id": 7
-    },
-    {
-      "title": "Hi chào cậu",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
-      "desc": "ádas",
-      "id": 8
-    },
-    {
-      "title": "Hi chào cậu",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
-      "desc": "ádas",
-      "id": 9
-    },
-    {
-      "title": "Hi chào cậu",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
-      "desc": "ádas",
-      "id": 10
-    },
-    {
-      "title": "Hi chào cậu",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644226012/roxm80ivs44lgkfqjsmd.jpg",
-      "desc": "ádas",
-      "id": 11
-    },
-    {
-      "title": "Hiệp nè",
-      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644301464/wayimzwbcynwql90dpo7.jpg",
-      "desc": "hi",
-      "id": 12
-    }
-  ],
-  "users": [
-    {
-      "email": "keninsta01@gmail.com",
-      "password": "$2a$10$LpnSkC5lEYiODNDBQYT7suO2i928rV4gDNMtYePybRv0.PjURdfsO",
-      "username": "datlt2306",
+      "title": "CAFE",
+      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644757984/n4dtgk8rh6z2xspvsvzz.png",
+      "desc": "750.000",
       "id": 1
     },
     {
-      "email": "keninsta02@gmail.com",
-      "password": "$2a$10$dQTjGYR2yJXGqpWPfgnaNOBW0Ak0QxK1VX2IXVxRxUeA50oCu7W42",
-      "username": "datlt23061",
+      "title": "CAFE 1",
+      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644758020/ukrfyd0xxgrwnvk8aouc.png",
+      "desc": "600.000",
       "id": 2
     },
     {
-      "email": "hiepnxph@gmail.com",
-      "password": "$2a$10$fj3avUYxnVAJSTkDwVBf.O/wycUX6ueehzRvDj0SghNmzI1FWIA0K",
+      "title": "CAFE 2",
+      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644758207/fqytwzsjrmdid86g4jhf.png",
+      "desc": "400.000",
       "id": 3
     },
     {
-      "email": "hiepnxph15148@fpt.edu.vn",
-      "password": "$2a$10$nnoVsGUn06Fmge4CdBN5xuzGWNVF3w.ngcJ9fF9dIh.cwQghf9QZ.",
+      "title": "CAFE 3",
+      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644758219/d8e0rrcnqohi64va9tqm.png",
+      "desc": "550.000",
       "id": 4
     },
     {
-      "email": "ngankien1111@gmail.com",
-      "password": "$2a$10$pWVbmSdmuzNIqzK/ih74MOLIHwoSVqgbBgSXNy/FBNhKn.uucA6lu",
+      "title": "CAFE TRUUYỀN THỐNG",
+      "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644758253/sdllmmettjeh9btert5q.png",
+      "desc": "650.000",
       "id": 5
+    }
+  ],
+  "users": [
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$IlJjlxq/J6s8BRrEUYQTTeiPN0uu22N.uO7CZlCkve4LTkhwsBwma",
+      "id": 1
     }
   ]
 }

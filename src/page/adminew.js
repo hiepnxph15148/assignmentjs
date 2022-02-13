@@ -1,5 +1,6 @@
 import { getAll,remove } from "../api/post";
 // import { reRender } from "../utils/rerender";
+import {reRender} from "../utils/rerender"
 const AdminNews = {
   async render() {
     const { data } = await getAll()
@@ -223,6 +224,7 @@ const AdminNews = {
               if(confirm){
                   // call api
                   remove(id).then(() => console.log("Đã xóa thành công"))
+                      reRender(AdminNews,'#adminnews')
               }
           })
       });

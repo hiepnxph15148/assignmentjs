@@ -2,7 +2,7 @@ const Banner = {
     render() {
         return `
             <div>
-                <img name="slide" src="https://picsum.photos/2000/400" alt="">  
+            <a href=""><img name="slide" src="https://res.cloudinary.com/fptpolytechnic/image/upload/v1644757362/banner3_ao4v4m.jpg" alt=""></a>  
             </div>
         `
     }
