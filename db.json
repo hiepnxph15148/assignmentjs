@@ -32,47 +32,53 @@
     }
   ],
   "users": [
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
     {
       "email": "admin@gmail.com",
       "password": "$2a$10$IlJjlxq/J6s8BRrEUYQTTeiPN0uu22N.uO7CZlCkve4LTkhwsBwma",
       "id": 1
+    }
+  ],
+  "postCates": [
+    {
+      "id": 1,
+      "name": "danh mục bài viết 1"
+    },
+    {
+      "id": 2,
+      "name": "danh mục bài viết 2"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "CAFE TRUUYỀN THỐNG",
+      "price": "50.000",
+      "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758675/image-post-4_ox4c2h.jpg"
+    },
+    {
+      "id": "2",
+      "name": "CAFE 1",
+      "price": "45.000",
+      "title": "CAFE",
+      "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758677/image-post-5_ljcyob.jpg"
+    },
+    {
+      "id": "3",
+      "name": "CAFE 2",
+      "price": "30.000",
+      "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644759394/phhpixcxfgcrq4xmqzxy.jpg"
+    },
+    {
+      "id": "4",
+      "name": "CAFE 3",
+      "price": "38.000",
+      "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758677/image-post-6_ng1vtn.jpg"
+    },
+    {
+      "id": "5",
+      "name": "CAFE 4",
+      "price": "50.000",
+      "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758674/image-post-3_h6bwd9.jpg"
     }
   ]
 }

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { get, getAll } from '../api/post';
 import MenuList from '../components/menuList';
 import Footer from '../components/footer';
+import Banner from '../components/banner';
 
 const DetailPost = {
     async render(id) {
@@ -9,19 +10,82 @@ const DetailPost = {
         return `
             <div>
             <div class="max-w-5xl m-auto">
-            ${MenuList.render()}
-            <h1 class="text-left py-5 text-3xl font-bold">${data.title}</h1>
-            <div class="flex justify-between">
-            <img src="${data.img}" class="w-[500px] border-2"/>
-            <p class="p-3">Thức uống rất được ưa chuộng! Trà xanh thượng hạng từ cao nguyên Việt Nam, kết hợp cùng đá xay, thạch trà dai dai, thơm ngon và một lớp kem dày phủ lên trên vô cùng hấp dẫn. Freeze Trà Xanh thơm ngon, mát lạnh, chinh phục bất cứ ai!</p> 
-            </div>
-            <p class="font-bold">Giá: ${data.desc}</p>
-            <input class=" hover:text-red-500 font-bold py-5" type="submit" value="Đặt mua">
-
-           <spam class=""> ${Footer.render()} </spam>
         </div>    
+        ${MenuList.render()}
             </div>
-            
+            ${Banner.render(    )}
+            <div class=" ">
+  <div class="flex-none w-56 relative">
+    <img src="${data.img}" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" />
+  </div>
+  <form class="flex-auto p-6">
+    <div class="flex flex-wrap">
+      <h1 class="flex-auto font-medium text-slate-900">
+      ${data.title}
+      </h1>
+      <div class="w-full flex-none mt-2 order-1 text-3xl font-bold text-violet-600">
+      Giá: ${data.desc}
+      </div>
+      <div class="text-sm font-medium text-slate-400">
+        In stock
+      </div>
+    </div>
+    <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+      <div class="space-x-2 flex text-sm font-bold">
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="xs" checked />
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white">
+            XS
+          </div>
+        </label>
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="s" />
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white">
+            S
+          </div>
+        </label>
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="m" />
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white">
+            M
+          </div>
+        </label>
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="l" />
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white">
+            L
+          </div>
+        </label>
+        <label>
+          <input class="sr-only peer" name="size" type="radio" value="xl" />
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-violet-400 peer-checked:bg-violet-600 peer-checked:text-white">
+            XL
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="flex space-x-4 mb-5 text-sm font-medium">
+      <div class="flex-auto flex space-x-4">
+        <button class="h-10 px-6 font-semibold rounded-full bg-violet-600 text-white" type="submit">
+          Buy now
+        </button>
+        <button class="h-10 px-6 font-semibold rounded-full border border-slate-200 text-slate-900" type="button">
+          Add to bag
+        </button>
+      </div>
+      <button class="flex-none flex items-center justify-center w-9 h-9 rounded-full text-violet-600 bg-violet-50" type="button" aria-label="Like">
+        <svg width="20" height="20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm text-slate-500">
+      Free shipping on all continental US orders.
+    </p>
+  </form>
+</div>
+<spam class=""> ${Footer.render()} </spam>
+
         `
     },
 };

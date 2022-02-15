@@ -9,6 +9,10 @@ import NewsPage from "./page/news";
 import SignIn from "./page/signin";
 import SignUp from "./page/signup";
 import AdminEditPost from "./page/edit";
+import DetailProductsPage from "./page/products/detail";
+import ProductsPage from "./page/products";
+import AdminNew from "./page/adminew";
+import CartPage from "./page/cart";
 
 const router = new Navigo("/", {linksSelector: "a",hash:true});
 // const render = (content) => {
@@ -56,9 +60,12 @@ router.on({
     "/admin/dashboard": () => {
         print(Dashboard)
     },
+    "/products": () => print(ProductsPage),
+    "/products/:id": ({ data }) => print(DetailProductsPage, data.id),
     "/admin/news": () => {
-        print(AdminNews)
+        print(AdminNew)
     },
+    "admin/products:id/cart": ({data}) => print(CartPage,data.id),
     "/admin/news/add": () => {
         print(AddNews)
     },

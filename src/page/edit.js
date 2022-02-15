@@ -30,7 +30,7 @@ const AdminEditPost = {
         
             </div>
             </header>
-            <main class="border-8 border-sky-500 mt-8 rounded-3xl">
+            <main class="hi border-8 border-sky-500 mt-8 rounded-3xl">
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                 <!-- Replace with your content -->
                 <form action="" id="form-edit">
@@ -69,7 +69,6 @@ const AdminEditPost = {
                 "img":  document.querySelector('#img-post').value,
                 "desc":  document.querySelector('#desc-post').value
             })
-            // axios.post('https://5e79b4b817314d00161333da.mockapi.io/posts', postFake)
         })
     }
 };

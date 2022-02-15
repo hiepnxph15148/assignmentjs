@@ -1,7 +1,7 @@
 import { getAll,remove } from "../api/post";
 // import { reRender } from "../utils/rerender";
 import {reRender} from "../utils/rerender"
-const AdminNews = {
+const AdminNew = {
   async render() {
     const { data } = await getAll()
         return /* html */`
@@ -224,10 +224,10 @@ const AdminNews = {
               if(confirm){
                   // call api
                   remove(id).then(() => console.log("Đã xóa thành công"))
-                      reRender(AdminNews,'#adminnews')
+                      reRender(AdminNew,'#adminew')
               }
           })
       });
   }
 };
-export default AdminNews;
+export default AdminNew;

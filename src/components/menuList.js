@@ -1,12 +1,12 @@
 const MenuList = {
     render() {
         return /*html*/`
-    <div class="bg-white">
+     <div class="bg-white">
         <ul class="flex justify-between px-8">
         <li><a href="/"><img src="https://res.cloudinary.com/fptpolytechnic/image/upload/v1644757348/logo-dark_ksvqsf.png" class="block px-4 py w-[200px]" alt=""></a></li>
         <li><a href="/" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Trang chủ </a></li>
-        <li><a href="/about" class="block px-4 py-3 hover:bg-[red] hover:text-white">Đang bán</a></li>
-        <li><a href="/news" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đặc chưng</a></li>
+        <li><a href="/products" class="block px-4 py-3 hover:bg-[red] hover:text-white">Đang bán</a></li>
+        <li><a href="/about" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đặc chưng</a></li>
         <li><a href="/signin" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đăng nhập</a></li>
         <li><a href="/signup" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đăng ký</a></li>
         ${localStorage.getItem('user') ? `
