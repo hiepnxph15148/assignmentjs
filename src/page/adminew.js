@@ -1,4 +1,4 @@
-import { getAll,remove } from "../api/post";
+import { getAll,remove } from "../api/products";
 // import { reRender } from "../utils/rerender";
 import {reRender} from "../utils/rerender"
 const AdminNew = {
@@ -153,7 +153,7 @@ const AdminNew = {
                             Title & Image
                           </th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Desc
+                            Price
                           </th>
                           <th scope="col" class="relative px-6 py-3">
                             <span class="sr-only">Edit</span>
@@ -170,7 +170,7 @@ const AdminNew = {
                             </div>
                             <div class="ml-4">
                               <div class="text-sm font-medium text-gray-900">
-                                ${post.title}
+                                ${post.name}
                               </div>
                               <div class="text-sm text-gray-500">
                                 
@@ -179,8 +179,7 @@ const AdminNew = {
                           </div>
                         </td>
                         <td class="py-4 whitespace-nowrap">
-                          <div class="text-sm text-gray-900">${post.desc}</div>
-                          <div class="text-sm text-gray-500">Optimization</div>
+                          <div class="text-sm text-gray-900">${post.price}</div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                           <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>

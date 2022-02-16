@@ -5,7 +5,7 @@ const NewsList2 = {
         const { data } = await axios.get('http://localhost:3001/products');
         return`
         <h1 class="text-center font-bold py-3">Đồ uống đặc chưng </h1>
-        <div class="grid grid-cols-5 gap-4 m-auto py-8">
+        <div class="grid grid-cols-4 gap-4 m-auto py-8">
             ${data.map((post) => /* html */ `
                 <div class="news">
                     <div class="iteam border border-black p-2 ">

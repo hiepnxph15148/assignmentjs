@@ -9,7 +9,7 @@ const AboutPage = {
         <div> ${MenuList.render()}</div>
         <div> ${Banner.render()}</div>
         <h1 class="text-center font-bold py-3">Đồ uống đặc chưng </h1>
-        <div class="grid grid-cols-5 gap-4 m-auto py-8">
+        <div class="grid grid-cols-4 gap-4 m-auto py-8">
             ${data.map((post) => /* html */ `
                 <div class="news">
                     <div class="iteam border border-black p-2 ">
@@ -17,9 +17,6 @@ const AboutPage = {
                 <h2  class="text-center">
                     <a class="font-bold" href="/#/news/${post.id}">${post.title}</a>
                 </h2>
-                <p class="text-center text-red-600 font-bold">
-                    ${post.desc}
-                </p>
                 </div>
             </div>
             `).join("")}

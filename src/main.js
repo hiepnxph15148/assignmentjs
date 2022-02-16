@@ -15,9 +15,7 @@ import AdminNew from "./page/adminew";
 import CartPage from "./page/cart";
 
 const router = new Navigo("/", {linksSelector: "a",hash:true});
-// const render = (content) => {
 const print = async(content,id)=>{
-    // document.getElementById("header").innerHTML = MenuList.print();
     document.getElementById("app").innerHTML = await content.render(id);
     if(content.afterRender) content.afterRender(id);
 }
@@ -65,7 +63,7 @@ router.on({
     "/admin/news": () => {
         print(AdminNew)
     },
-    "admin/products:id/cart": ({data}) => print(CartPage,data.id),
+    "/cart":() => print(CartPage),
     "/admin/news/add": () => {
         print(AddNews)
     },

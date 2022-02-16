@@ -1,5 +1,5 @@
 import axios from "axios";
-import { add, get, update } from "../api/post";
+import { add, get, update } from "../api/products";
 
 const AdminEditPost = {
     async render(id) {
@@ -36,9 +36,9 @@ const AdminEditPost = {
                 <form action="" id="form-edit">
                     <input type="text" 
                         class="border-2 border-slate-900 w-96 h-10 mb-8" 
-                        placeholder="title post"
-                        id="title-post"
-                        value="${data.title}"
+                        placeholder="name-post"
+                        id="name-post"
+                        value="${data.name}"
                         > <br />
                     <input type="text" 
                         class="border-2 border-slate-900 w-96 h-10 mb-8" 
@@ -47,9 +47,10 @@ const AdminEditPost = {
                         value="${data.img}"
                         > <br />
                     <textarea name="" 
-                            id="desc-post" 
+                            id="price-post" 
+                            placeholder="price- post"
                             class="border-2 border-slate-900 w-96 h-10 mb-8"
-                            value="${data.desc}"
+                            value="${data.price}"
                             ></textarea><br />
                     <button class="bg-blue-500 p-4 text-white rounded-3xl">Cập nhật bài viết</button>
                 </form>
@@ -65,10 +66,11 @@ const AdminEditPost = {
             e.preventDefault();
             update({
                 id: id,
-                "title": document.querySelector('#title-post').value,
+                "name": document.querySelector('#name-post').value,
                 "img":  document.querySelector('#img-post').value,
-                "desc":  document.querySelector('#desc-post').value
+                "price":  document.querySelector('#price-post').value
             })
+            reRender(AdminEditPost, "#admin");
         })
     }
 };

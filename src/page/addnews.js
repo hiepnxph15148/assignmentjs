@@ -1,5 +1,5 @@
 import axios, { Axios } from "axios";
-import { add } from "../api/post";
+import { add } from "../api/products";
 // import { reRender } from "../utils/rerender";
 // import AdminNews from "./adminew";
 const AddNews = {
@@ -35,7 +35,7 @@ const AddNews = {
             <input type="text" 
                 class="border-2 border-slate-900 w-96 h-10 mb-8" 
                 placeholder="Tên sản phẩm"
-                id="title-post"
+                id="name-post"
                 > <br />
             <input type="file" 
                 class="border-2 border-slate-900 mb-8" 
@@ -43,7 +43,7 @@ const AddNews = {
                 id="img-post"
                 > <br />
             <textarea name="" 
-                    id="desc-post" 
+                    id="price-post" 
                     class=" border-2 border-slate-900 w-96 h-10 mb-8"
                     placeholder="Giá sản phẩm"
                     ></textarea><br />
@@ -79,9 +79,9 @@ afterRender() {
       formAdd.addEventListener("submit", (e) => {
         e.preventDefault();
         add({
-          title: document.querySelector("#title-post").value,
+          title: document.querySelector("#name-post").value,
           img: data.url,
-          desc: document.querySelector("#desc-post").value,
+          desc: document.querySelector("#price-post").value,
         });
         // Sau khi thêm bài viết thành công...
         document.location.href="/#/admin/news/";
