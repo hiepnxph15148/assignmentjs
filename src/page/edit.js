@@ -36,22 +36,27 @@ const AdminEditPost = {
                 <form action="" id="form-edit">
                     <input type="text" 
                         class="border-2 border-slate-900 w-96 h-10 mb-8" 
-                        placeholder="name-post"
+                        placeholder="name"
                         id="name-post"
                         value="${data.name}"
                         > <br />
-                    <input type="text" 
-                        class="border-2 border-slate-900 w-96 h-10 mb-8" 
+                        <div class="grid grid-cols-3 gap-8">
+                        <div>
+                    <input type="file" 
+                        class="border-2 border-slate-900  mb-8" 
                         placeholder="image "
                         id="img-post"
-                        value="${data.img}"
-                        > <br />
+                        <div>
+                          <img src="${data.img}" id="imgPreview" />
+                        </div>
+                      </div>
+                        <br />
                     <textarea name="" 
                             id="price-post" 
-                            placeholder="price- post"
+                            placeholder="price"
                             class="border-2 border-slate-900 w-96 h-10 mb-8"
                             value="${data.price}"
-                            ></textarea><br />
+                            ></textarea><br/>
                     <button class="bg-blue-500 p-4 text-white rounded-3xl">Cập nhật bài viết</button>
                 </form>
                 <!-- /End replace -->
@@ -60,18 +65,49 @@ const AdminEditPost = {
         </div>
         `;
     },
-    afterRender(id){
-        const formEdit = document.querySelector('#form-edit');
-        formEdit.addEventListener('submit', (e) => {
+afterRender(id){
+        const formEdit = document.querySelector("#form-edit");
+        const imgPost = document.querySelector("#img-post");
+        const imgPreview = document.querySelector('#imgPreview');
+
+        const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/fptpolytechnic/image/upload";
+        const CLOUDINARY_PRESET = "mpuk8lt"
+
+        let imgLink = "";
+
+        imgPost.addEventListener('change', (e) => {
+            // console.log(URL.createObjectURL(e.target.files[0]))
+            imgPreview.src = URL.createObjectURL(e.target.files[0])
+        })
+
+        // submit form
+        formEdit.addEventListener("submit", async (e) => {
             e.preventDefault();
+            const file = imgPost.files[0];
+            if(file){
+                 // Lấy giá trị của file upload cho sử dụng formData
+                const formData = new FormData();
+                formData.append("file", file);
+                formData.append("upload_preset", CLOUDINARY_PRESET);
+                    // call API
+                const { data } = await axios.post(CLOUDINARY_API,formData, {
+                    headers: {
+                        "Content-Type": "application/x-www-formendcoded",
+                    },
+                    }
+                );
+                imgLink = data.url;
+            }
+            
+           
             update({
                 id: id,
-                "name": document.querySelector('#name-post').value,
-                "img":  document.querySelector('#img-post').value,
-                "price":  document.querySelector('#price-post').value
-            })
-            reRender(AdminEditPost, "#admin");
-        })
+                name: document.querySelector("#name-post").value,
+                img: imgLink ? imgLink : imgPreview.src,
+                price: document.querySelector("#price-post").value,
+            });
+        // Sau khi thêm bài viết thành công...
+        });
     }
 };
 export default AdminEditPost;
