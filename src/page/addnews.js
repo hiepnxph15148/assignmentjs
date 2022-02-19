@@ -33,28 +33,26 @@ const AddNews = {
         <main  class="border-8 border-sky-500 mt-8 rounded-3xl p-8 hi">
         <form action="" id="form-add">
             <input type="text" 
-                class="border-2 border-slate-900 w-96 h-10 mb-8" 
+                class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg" 
                 placeholder="Tên sản phẩm"
                 id="name-post"
                 > <br />
-                 <div class="grid grid-cols-3 gap-2">
-                <div>
-                  <input type="file" 
-                  class="border-2 border-slate-900  mb-8" 
-                  id="img-post"
-                  > 
-                </div>
-                <div>
-                  <img src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg" class="m-auto border-slate-900" id="imgPreview" />
-                </div>
-              </div>
-                 <br />
-            <textarea name="" 
+            <input name="" 
                     id="price-post" 
-                    class=" border-2 border-slate-900 w-96 h-10 mb-8"
+                    class=" border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg"
                     placeholder="Giá sản phẩm"
-                    ></textarea><br />
-            <button class="bg-blue-500 p-4 text-white rounded-3xl">Thêm bài viết</button>
+                    ><br />
+                    <div class="grid grid-cols-2 gap-2">
+                    <div>
+             <input type="file" 
+               class="border-2 border-slate-900 mb-8 rounded-lg" 
+                 id="img-post"
+                 </div>
+                 <div>
+                <img src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg" class="w-[200px] h-[200px]" id="imgPreview" />
+                   </div>
+                 <br>
+          <button class="bg-blue-500 p-4 text-white rounded-3xl">Thêm bài viết</button>
         </form>
         <!-- /End replace -->
     </div>

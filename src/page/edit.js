@@ -4,7 +4,6 @@ import { add, get, update } from "../api/products";
 const AdminEditPost = {
     async render(id) {
        const {data} = await get(id)
-        console.log(data);
         return /* html */`
         <div class="min-h-full py-6">
             <header class="bg-white shadow">
@@ -35,28 +34,28 @@ const AdminEditPost = {
                 <!-- Replace with your content -->
                 <form action="" id="form-edit">
                     <input type="text" 
-                        class="border-2 border-slate-900 w-96 h-10 mb-8" 
+                        class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg" 
                         placeholder="name"
                         id="name-post"
                         value="${data.name}"
                         > <br />
                         <div class="grid grid-cols-3 gap-8">
                         <div>
-                    <input type="file" 
-                        class="border-2 border-slate-900  mb-8" 
-                        placeholder="image "
-                        id="img-post"
-                        <div>
-                          <img src="${data.img}" id="imgPreview" />
-                        </div>
-                      </div>
                         <br />
-                    <textarea name="" 
+                    <input name="" 
                             id="price-post" 
                             placeholder="price"
-                            class="border-2 border-slate-900 w-96 h-10 mb-8"
+                            class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg"
                             value="${data.price}"
-                            ></textarea><br/>
+                            ><br/>
+                            <input type="file" 
+                            class="border-2 border-slate-900  mb-8 rounded-lg"
+                            placeholder="image "
+                            id="img-post"
+                            <div>
+                              <img src="${data.img}" class="w-[200px] h-[200px]" id="imgPreview" />
+                            </div>
+                          </div><br>
                     <button class="bg-blue-500 p-4 text-white rounded-3xl">Cập nhật bài viết</button>
                 </form>
                 <!-- /End replace -->
