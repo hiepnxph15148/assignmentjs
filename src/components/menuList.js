@@ -9,10 +9,10 @@ const MenuList = {
         <li><a href="/about" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đặc chưng</a></li>
         <li><a href="/signin" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đăng nhập</a></li>
         <li><a href="/signup" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Đăng ký</a></li>
-        <li><a href="/cart" class="block px-4 py-3 hover:bg-[red] hover:text-white ">Giỏ hàng</a></li>
+        <li><a href="/cart" class="block px-4 py-3 hover:bg-[red] hover:text-white "><i class="fa-solid fa-cart-shopping"></i></a></li>
         ${localStorage.getItem('user') ? `
         <li class="block px-4 py-3 hover:bg-[red] hover:text-white" id="account-email"></li>
-        <li class="block px-4 py-3 hover:bg-[red]" id="logout" class="cursor-pointer">Logout</li>
+        <li class="block px-4 py-3 hover:bg-[red]" id="logout" class="cursor-pointer">Logout <i class="fa-solid fa-right-from-bracket"></i></li>
         
       </ul>`: "" }
     </div>
