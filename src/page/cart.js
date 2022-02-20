@@ -16,8 +16,8 @@ const CartPage = {
                 <thead class="w-full">
                     <tr>
                         <th class="text-left">Tên sản phẩm</th>
-                        <th  class="text-left">Price</th>
-                        <th class="text-left"> Số lượng</th>
+                        <th  class="text-center">Price</th>
+                        <th class="text-center"> Số lượng</th>
                         <th></th>
                         <th></th>
                         
@@ -27,8 +27,8 @@ const CartPage = {
                     ${cart.map(item => `
                         <tr>
                             <td>${item.name}</td>
-                            <td class="px-4">${item.price}</td>
-                            <td>${item.quantity}</td>
+                            <td class="px-4 text-center">${item.price}</td>
+                            <td class="text-center">${item.quantity}</td>
                             <td>
                                 <button  data-id="${item.id}" class="btn increase border border-black p-2">+</button>
                                 <button  data-id="${item.id}" class="btn decrease border border-black p-2">-</button>
