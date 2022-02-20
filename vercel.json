@@ -35,6 +35,10 @@
         {
             "src":"/admin/news/:id/edit",
             "dest":"/"
+        },
+        {
+            "src":"/products",
+            "dest":"/"
         }
     ]
 }
