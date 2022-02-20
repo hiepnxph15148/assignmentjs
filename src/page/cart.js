@@ -16,6 +16,7 @@ const CartPage = {
                 <thead class="w-full">
                     <tr>
                         <th class="text-left">Tên sản phẩm</th>
+                        <th>Image</th>
                         <th  class="text-center">Price</th>
                         <th class="text-center"> Số lượng</th>
                         <th></th>
@@ -27,6 +28,7 @@ const CartPage = {
                     ${cart.map(item => `
                         <tr>
                             <td>${item.name}</td>
+                            <td class="w-[100px] h-[100px] px-4 text-center"><img src="${item.img}" alt=""></td>
                             <td class="px-4 text-center">${item.price}</td>
                             <td class="text-center">${item.quantity}</td>
                             <td>
@@ -40,7 +42,7 @@ const CartPage = {
                     `).join("")}
                 </tbody>
                 <tfoot class="w-full" >
-                    <tr><td colspan="2" class="text-right">Tổng là: <span id="total">null</span></td></tr>
+                    <tr><td colspan="7" class="text-center">Tổng là: <span id="total">null</span></td></tr>
                 </tfoot>
             </table>
             </div>
