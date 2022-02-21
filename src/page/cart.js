@@ -42,7 +42,7 @@ const CartPage = {
                     `).join("")}
                 </tbody>
                 <tfoot class="w-full" >
-                    <tr><td colspan="7" class="text-center">Tổng là: <span id="total">null</span></td></tr>
+                    <tr><td colspan="7" class="text-center font-bold">Tổng là: <span id="total"></span></td></tr>
                 </tfoot>
             </table>
             </div>
@@ -50,6 +50,14 @@ const CartPage = {
         `
     },
     afterRender(){
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        let count=0;
+        cart.map((item) =>{
+            count+=item.price*item.quantity
+        })
+        const total=document.querySelector('#total')
+        total.innerHTML=count
+        
         const btns = $('.btn');
         btns.forEach(btn => {
             btn.addEventListener('click', function(){
