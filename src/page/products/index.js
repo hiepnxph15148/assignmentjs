@@ -2,12 +2,14 @@ import { getAll } from '../../api/products';
 import Banner from '../../components/banner';
 import MenuList from '../../components/menuList';
 import Footer from '../../components/footer';
+import cotegory from "../../components/cotegory"
 const ProductsPage = {
     async render() {
         const { data } = await getAll();
         return `
             ${MenuList.render()}
             ${Banner.render()}
+            <div class="flex justify-center">${await cotegory.render()}</div>
             <div class="grid grid-cols-4 gap-8 py-4">
                 ${data.map((post) => `
                     <div class="border p-4">

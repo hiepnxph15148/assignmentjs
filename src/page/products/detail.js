@@ -6,6 +6,7 @@ import "toastr/build/toastr.min.css";
 import MenuList from '../../components/menuList';
 import Banner from '../../components/banner';
 import Footer from '../../components/footer';
+import category from '../category';
 
 const DetailProductsPage = {
     async render(id) {

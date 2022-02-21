@@ -13,6 +13,9 @@ import DetailProductsPage from "./page/products/detail";
 import ProductsPage from "./page/products";
 import AdminNew from "./page/adminew";
 import CartPage from "./page/cart";
+import AdminPro from "./page/adminnew";
+import AdminEditPost1 from "./page/editnew";
+import category from "./page/category";
 
 const router = new Navigo("/", {linksSelector: "a",hash:true});
 const print = async(content,id)=>{
@@ -63,12 +66,21 @@ router.on({
     "/admin/news": () => {
         print(AdminNew)
     },
+    "admin/new":()=>{
+        print(AdminPro)
+    },
+    "admin/category":()=>{
+        print(category)
+    },
     "/cart":() => print(CartPage),
     "/admin/news/add": () => {
         print(AddNews)
     },
     "/admin/news/:id/edit": ({data}) => {
         print(AdminEditPost, data.id);
+    },
+    "/admin/news/:id/edit": ({data}) => {
+        print(AdminEditPost1, data.id);
     },
 });
 router.resolve();

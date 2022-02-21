@@ -5,6 +5,7 @@
       "img": "http://res.cloudinary.com/fptpolytechnic/image/upload/v1644758020/ukrfyd0xxgrwnvk8aouc.png",
       "desc": "Rorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a liqua. Ut enim ad minim veniam, quis nostrud exerc itaullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.ea commodo consequaty.Rorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a liqua. Ut enim ad minim veniam, quis nostrud exerc itaullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.ea commodo consequaty.Rorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a liqua. Ut enim ad minimy.",
       "id": 2
+      
     },
     {
       "title": "CAFE 2",
@@ -47,25 +48,42 @@
       "id": "1",
       "name": "CAFE TRUUYỀN THỐNG",
       "price": "50.000",
-      "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758675/image-post-4_ox4c2h.jpg"
+      "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758675/image-post-4_ox4c2h.jpg",
+      "category":"1"
     },
     {
       "id": "3",
       "name": "CAFE 2",
       "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644759394/phhpixcxfgcrq4xmqzxy.jpg",
-      "price": "50.000"
+      "price": "50.000",
+      "category":"1"
     },
     {
       "id": "4",
       "name": "Thịt Nướng",
       "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758677/image-post-6_ng1vtn.jpg",
-      "price": "200.000"
+      "price": "200.000",
+      "category":"2"
     },
     {
       "id": "5",
       "name": "CAFE 3",
       "img": "https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758674/image-post-3_h6bwd9.jpg",
-      "price": "40.000"
+      "price": "40.000",
+      "category":"1"
+    }
+  ],
+  "category":[   
+    {
+      "id":"1",
+      "name":"Đồ uống",
+      "img":"https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758674/image-post-3_h6bwd9.jpg"
+      
+    },
+    {
+      "id":"2",
+      "name":"Đồ ăn",
+      "img":"https://res.cloudinary.com/fptpolytechnic/image/upload/v1644758677/image-post-6_ng1vtn.jpg"
     }
   ]
 }

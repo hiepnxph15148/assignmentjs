@@ -1,7 +1,7 @@
-import { getAll,remove } from "../api/products";
+import { getAll,remove } from "../api/post";
 // import { reRender } from "../utils/rerender";
 import {reRender} from "../utils/rerender"
-const AdminNew = {
+const AdminPro = {
   async render() {
     const { data } = await getAll()
         return /* html */`
@@ -17,11 +17,12 @@ const AdminNew = {
                   <div class="ml-10 flex items-baseline space-x-4">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a href="/admin/dashboard" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+        
                     <a href="/admin/category" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Category</a>
-                    <a href="/admin/news" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Products</a>
+              <a href="/admin/news" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Products</a>
       
-                    <a href="/admin/new" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">News</a>
-
+              <a href="/admin/new" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">News</a>
+      
                     <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                   </div>
                 </div>
@@ -94,7 +95,7 @@ const AdminNew = {
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/admin/dashboard" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
       
-              <a href="/admin/news" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Products</a>
+              <a href="/admin/news" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</a>
       
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
             </div>
@@ -172,7 +173,7 @@ const AdminNew = {
                             </div>
                             <div class="ml-4">
                               <div class="text-sm font-medium text-gray-900">
-                                ${post.name}
+                                ${post.title}
                               </div>
                               <div class="text-sm text-gray-500">
                                 
@@ -181,7 +182,7 @@ const AdminNew = {
                           </div>
                         </td>
                         <td class="py-4 whitespace-nowrap">
-                          <div class="text-sm text-gray-900">${post.price}</div>
+                          <div class="text-sm text-gray-900">${post.desc}</div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                           <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
@@ -231,4 +232,4 @@ const AdminNew = {
       });
   }
 };
-export default AdminNew;
+export default AdminPro;
