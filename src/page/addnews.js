@@ -2,6 +2,8 @@ import axios, { Axios } from "axios";
 import { add } from "../api/products";
 // import { reRender } from "../utils/rerender";
 // import AdminNews from "./adminew";
+import $ from 'jquery';
+import validate from 'jquery-validation';
 const AddNews = {
     render() {
         return/*html*/`
@@ -36,8 +38,9 @@ const AddNews = {
                 class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg" 
                 placeholder="Tên sản phẩm"
                 id="name-post"
+                name="name-post"
                 > <br />
-            <input name="" 
+            <input name="price-post" 
                     id="price-post" 
                     class=" border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg"
                     placeholder="Giá sản phẩm"
@@ -47,6 +50,7 @@ const AddNews = {
              <input type="file" 
                class="border-2 border-slate-900 mb-8 rounded-lg" 
                  id="img-post"
+                 name="img-post"
                  </div>
                  <div>
                 <img src="http://2.bp.blogspot.com/-MowVHfLkoZU/VhgIRyPbIoI/AAAAAAAATtI/fHk-j_MYUBs/s640/placeholder-image.jpg" class="w-[200px] h-[200px]" id="imgPreview" />
@@ -60,42 +64,83 @@ const AddNews = {
         </main>
         `
     },
-  afterRender() {
-    const formAdd = document.querySelector("#form-add");
-    const imgPost = document.querySelector("#img-post");
-    const imgPreview = document.querySelector('#imgPreview');
+afterRender(){
+  const formAdd = $('#form-add');
+  const imgPost = document.querySelector('#img-post');
+  const imgPreview = document.querySelector("#imgPreview");
+  let imgLink = "";
 
-    const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/fptpolytechnic/image/upload";
-    const CLOUDINARY_PRESET = "mpuk8lt"
+  const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/fptpolytechnic/image/upload";
+  const CLOUDINARY_PRESET = "mpuk8lt";
 
-    imgPost.addEventListener('change', (e) => {
-        // console.log(URL.createObjectURL(e.target.files[0]))
-        imgPreview.src = URL.createObjectURL(e.target.files[0])
-    })
 
-    // submit form
-    formAdd.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const file = imgPost.files[0];
-      
-      // Lấy giá trị của file upload cho sử dụng formData
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", CLOUDINARY_PRESET);
-        // call API
-      const { data } = await axios.post(CLOUDINARY_API,formData, {
-          headers: {
-            "Content-Type": "application/x-www-formendcoded",
+  imgPost.addEventListener('change', function(e){
+      imgPreview.src = URL.createObjectURL(e.target.files[0])
+  });
+
+  formAdd.validate({
+      rules: {
+         "name-post": {
+             required: true,
+             minlength: 5,
+             maxlength: 15
+         },
+         "price-post": {
+          required: true,
+          minlength: 5,
+          maxlength: 15
+      }
+      },
+      messages: {
+          "name-post": {
+              required: "Phần này còn thiếu",
+              minlength: "Ít nhất phải 5 ký tự anh ei",
+              maxlength: "Không được vượt quá 15 ký tự anh ei"
           },
-        }
-      );
-      add({
-        name: document.querySelector("#name-post").value,
-        img: data.url,
-        price: document.querySelector("#price-post").value,
-      });
-      // Sau khi thêm bài viết thành công...
-    });
-  },
+          "price-post": {
+            required: "Phần này còn thiếu",
+            minlength: "Ít nhất phải 5 ký tự anh ei",
+            maxlength: "Không được vượt quá 15 ký tự anh ei"
+        },
+      },
+      submitHandler: () => {
+
+          async function addPostHandler(){
+              // Lấy giá trị input file
+              const file = imgPost.files[0];
+              if(file){
+                  // append vào object formData
+                  const formData = new FormData();
+                  formData.append('file', file);
+                  formData.append('upload_preset', CLOUDINARY_PRESET)
+
+                  // call api cloudinary
+                  const { data } = await axios.post(CLOUDINARY_API, formData, {
+                      headers: {
+                        "Content-Type": "application/x-www-formendcoded",
+                      }
+                  });
+                  imgLink = data.url;
+              }
+
+              
+              // call api thêm bài viết
+              add({
+                  "title": document.querySelector('#name-post').value,
+                  "img": imgLink || "",
+                  "desc": document.querySelector('#price-post').value
+              });
+              document.location.href="/#/admin/products";
+              await reRender(AddNews, "#app");
+          }
+          addPostHandler();
+      }
+  })
+  // formAdd.addEventListener('submit', async (e) => {
+  //     e.preventDefault();
+
+  
+  // })
+}
 };
 export default AddNews;

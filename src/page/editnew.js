@@ -36,15 +36,15 @@ const AdminEditPost1 = {
                     <input type="text" 
                         class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg" 
                         placeholder="name"
-                        id="name-post"
+                        id="title-post"
                         value="${data.title}"
                         > <br />
                         <div class="grid grid-cols-3 gap-8">
                         <div>
                         <br />
                     <input name="" 
-                            id="price-post" 
-                            placeholder="price"
+                            id="desc-post" 
+                            placeholder="desc"
                             class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg"
                             value="${data.desc}"
                             ><br/>
@@ -101,9 +101,9 @@ afterRender(id){
            
             update({
                 id: id,
-                name: document.querySelector("#name-post").value,
+                name: document.querySelector("#title-post").value,
                 img: imgLink ? imgLink : imgPreview.src,
-                price: document.querySelector("#price-post").value,
+                price: document.querySelector("desc-post").value,
             });
         // Sau khi thêm bài viết thành công...
         });
