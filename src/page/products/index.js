@@ -9,6 +9,7 @@ const ProductsPage = {
         return `
             ${MenuList.render()}
             ${Banner.render()}
+            
             <div class="flex justify-center">${await cotegory.render()}</div>
             <div class="grid grid-cols-4 gap-8 py-4">
                 ${data.map((post) => `

@@ -1,7 +1,7 @@
 import axios from "axios";
-import { add, get, update } from "../api/post";
+import {get, update } from "../api/category";
 
-const AdminEditPost1 = {
+const AdminEditcate = {
     async render(id) {
        const {data} = await get(id)
         return /* html */`
@@ -36,22 +36,16 @@ const AdminEditPost1 = {
                     <input type="text" 
                         class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg" 
                         placeholder="name"
-                        id="title-post"
-                        value="${data.title}"
+                        id="name-postcate"
+                        value="${data.name}"
                         > <br />
                         <div class="grid grid-cols-3 gap-8">
                         <div>
                         <br />
-                    <input name="" 
-                            id="desc-post" 
-                            placeholder="desc"
-                            class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg"
-                            value="${data.desc}"
-                            ><br/>
                             <input type="file" 
                             class="border-2 border-slate-900  mb-8 rounded-lg"
-                            placeholder="image "
-                            id="img-post"
+                            placeholder="image"
+                            id="img-postcate"
                             <div>
                               <img src="${data.img}" class="w-[200px] h-[200px]" id="imgPreview" />
                             </div>
@@ -66,7 +60,7 @@ const AdminEditPost1 = {
     },
 afterRender(id){
         const formEdit = document.querySelector("#form-edit");
-        const imgPost = document.querySelector("#img-post");
+        const imgPost = document.querySelector("#img-postcate");
         const imgPreview = document.querySelector('#imgPreview');
 
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/fptpolytechnic/image/upload";
@@ -101,12 +95,11 @@ afterRender(id){
            
             update({
                 id: id,
-                desc: document.querySelector("#desc-post").value,
-                title: document.querySelector("#title-post").value,
-                img: imgLink ? imgLink : imgPreview.src,
+                namecate: document.querySelector("#namecate-post").value,
+                imgcate: imgLink ? imgLink : imgPreview.src,
             });
         // Sau khi thêm bài viết thành công...
         });
     }
 };
-export default AdminEditPost1;
+export default AdminEditcate;

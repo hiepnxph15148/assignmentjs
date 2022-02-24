@@ -133,7 +133,7 @@ const AdminPro = {
               Dashboard
             </h1>
           </div>
-        <a href="/admin/news/add">
+        <a href="/admin/new/add">
         <button type="submit" class=" mr-10 mt-10 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                    Add
                   </button>

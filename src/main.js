@@ -16,6 +16,9 @@ import CartPage from "./page/cart";
 import AdminPro from "./page/adminnew";
 import AdminEditPost1 from "./page/editnew";
 import category from "./page/category";
+import Addcate from "./page/adcate"
+import Addpost from "./page/addpost";
+import AdminEditcate from "./page/editcate";
 
 const router = new Navigo("/", {linksSelector: "a",hash:true});
 const print = async(content,id)=>{
@@ -66,21 +69,30 @@ router.on({
     "/admin/news": () => {
         print(AdminNew)
     },
-    "admin/new":()=>{
+    "/admin/new":()=>{
         print(AdminPro)
     },
-    "admin/category":()=>{
+    "/admin/new/add":()=>{
+        print(Addpost)
+    },
+    "/admin/category":()=>{
         print(category)
     },
     "/cart":() => print(CartPage),
     "/admin/news/add": () => {
         print(AddNews)
     },
+    "admin/category/add":()=>{
+        print(Addcate)
+    },
     "/admin/news/:id/edit": ({data}) => {
         print(AdminEditPost, data.id);
     },
     "/admin/news/:id/edit": ({data}) => {
         print(AdminEditPost1, data.id);
+    },
+    "/admin/category/:id/edit": ({data}) => {
+        print(AdminEditcate, data.id);
     },
 });
 router.resolve();

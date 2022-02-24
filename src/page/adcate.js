@@ -1,10 +1,10 @@
 import axios, { Axios } from "axios";
-import { add } from "../api/products";
+import { add } from "../api/category";
 // import { reRender } from "../utils/rerender";
 // import AdminNews from "./adminew";
 import $ from 'jquery';
 import validate from 'jquery-validation';
-const AddNews = {
+const Addcate = {
     render() {
         return/*html*/`
         <div class="min-h-full py-6">
@@ -39,14 +39,7 @@ const AddNews = {
                 placeholder="Tên sản phẩm"
                 id="name-post"
                 name="name-post"
-                > <br />
-            <input name="price-post" 
-                    id="price-post" 
-                    class=" border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg"
-                    placeholder="Giá sản phẩm"
-                    ><br />
-                    <div class="grid grid-cols-2 gap-2">
-                    <div>
+                ><br>
              <input type="file" 
                class="border-2 border-slate-900 mb-8 rounded-lg" 
                  id="img-post"
@@ -85,11 +78,6 @@ afterRender(){
              minlength: 5,
              maxlength: 15
          },
-         "price-post": {
-          required: true,
-          minlength: 5,
-          maxlength: 15
-      },
         "img-post":{}
       },
       messages: {
@@ -98,11 +86,6 @@ afterRender(){
               minlength: "Ít nhất phải 5 ký tự anh ei",
               maxlength: "Không được vượt quá 15 ký tự anh ei"
           },
-          "price-post": {
-            required: "Phần này còn thiếu",
-            minlength: "Ít nhất phải 5 ký tự anh ei",
-            maxlength: "Không được vượt quá 15 ký tự anh ei"
-        },
         "img-post":{}
       },
       submitHandler: () => {
@@ -132,10 +115,9 @@ afterRender(){
               add({
                 name: document.querySelector('#name-post').value,
                   img: imgLink || "",
-                 price: document.querySelector('#price-post').value
               });
             //   document.location.href="/#/admin/products";
-                // reRender(AddNews, "#app");
+                reRender(Addcate, "#app");
           }
           addPostHandler();
       }
@@ -147,4 +129,4 @@ afterRender(){
   // })
 }
 };
-export default AddNews;
+export default Addcate;

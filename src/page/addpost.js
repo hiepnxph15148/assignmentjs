@@ -1,10 +1,10 @@
 import axios, { Axios } from "axios";
-import { add } from "../api/products";
+import { add } from "../api/post";
 // import { reRender } from "../utils/rerender";
 // import AdminNews from "./adminew";
 import $ from 'jquery';
 import validate from 'jquery-validation';
-const AddNews = {
+const Addpost = {
     render() {
         return/*html*/`
         <div class="min-h-full py-6">
@@ -36,14 +36,14 @@ const AddNews = {
         <form action="" id="form-add">
             <input type="text" 
                 class="border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg" 
-                placeholder="Tên sản phẩm"
-                id="name-post"
-                name="name-post"
+                placeholder="Tên bài viết"
+                id="title-post"
+                name="title-post"
                 > <br />
-            <input name="price-post" 
-                    id="price-post" 
+            <input name="desc-post" 
+                    id="desc-post" 
                     class=" border-2 border-slate-900 w-96 h-10 mb-8 rounded-lg"
-                    placeholder="Giá sản phẩm"
+                    placeholder="Chi tiết bài viết"
                     ><br />
                     <div class="grid grid-cols-2 gap-2">
                     <div>
@@ -80,28 +80,28 @@ afterRender(){
 
   formAdd.validate({
       rules: {
-         "name-post": {
+         "title-post": {
              required: true,
              minlength: 5,
              maxlength: 15
          },
-         "price-post": {
+         "desc-post": {
           required: true,
           minlength: 5,
-          maxlength: 15
+          maxlength: 2000
       },
         "img-post":{}
       },
       messages: {
-          "name-post": {
+          "title-post": {
               required: "Phần này còn thiếu",
               minlength: "Ít nhất phải 5 ký tự anh ei",
-              maxlength: "Không được vượt quá 15 ký tự anh ei"
+              maxlength: "Không được vượt quá 15 kí tự"
           },
-          "price-post": {
+          "desc-post": {
             required: "Phần này còn thiếu",
             minlength: "Ít nhất phải 5 ký tự anh ei",
-            maxlength: "Không được vượt quá 15 ký tự anh ei"
+            maxlength: "Không được vượt quá 200 kí tự"
         },
         "img-post":{}
       },
@@ -130,9 +130,9 @@ afterRender(){
               
             //   call api thêm bài viết
               add({
-                name: document.querySelector('#name-post').value,
+                title: document.querySelector('#title-post').value,
                   img: imgLink || "",
-                 price: document.querySelector('#price-post').value
+                  desc: document.querySelector('#desc-post').value
               });
             //   document.location.href="/#/admin/products";
                 // reRender(AddNews, "#app");
@@ -147,4 +147,4 @@ afterRender(){
   // })
 }
 };
-export default AddNews;
+export default Addpost;

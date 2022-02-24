@@ -133,7 +133,7 @@ const category = {
               Dashboard
             </h1>
           </div>
-        <a href="/admin/news/add">
+        <a href="/admin/category/add">
         <button type="submit" class=" mr-10 mt-10 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                    Add
                   </button>
@@ -182,7 +182,7 @@ const category = {
                           </div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
+                          <a href="/admin/category/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Sửa</a>
                           <button data-id="${post.id}" class="btn btn-remove inline-block bg-indigo-500 text-white text-sm py-2 px-2">Xóa</button>
                         </td>
                       </tr>
